@@ -37,6 +37,5 @@ socketServer.on("connection", (socket) => {
     socket.on("deleteProduct", async (id) => {
         const deletedProduct = await productsManager.deleteProduct(+id);
         socket.emit("productDeleted", deletedProduct);
-        console.log(deletedProduct)
     })
 })
