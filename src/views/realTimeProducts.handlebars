@@ -1,0 +1,47 @@
+<div>
+    <h2>Add product</h2>
+    <form id="addForm">
+        Title: <input type="text" name="title" id="title">
+        Description: <input type="text" name="description" id="description">
+        Code: <input type="text" name="code" id="code">
+        Price: <input type="number" name="price" id="price">
+        Stock: <input type="number" name="stock" id="stock">
+        Category: <input type="text" name="category" id="category">
+        <input type="submit" value="Create">
+    </form>
+</div>
+<div>
+    <h2>Delete product</h2>
+    <form id="deleteForm">
+        Product ID: <input type="number" name="id" id="id">
+        <input type="submit" value="Delete">
+    </form>
+</div>
+
+<table id="table">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+        {{#each products}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{title}}</td>
+            <td>{{description}}</td>
+            <td>{{price}}</td>
+            <td>{{stock}}</td>
+            <td>{{category}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>
